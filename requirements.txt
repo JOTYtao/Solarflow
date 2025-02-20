@@ -24,4 +24,4 @@ torch==2.1.0+cu118
 torchmetrics==1.5.1
 torchvision==0.16.0+cu118
 xarray==2024.10.0
-~umpy==1.23.5
+numpy==1.23.5
