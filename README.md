@@ -13,7 +13,7 @@ A deep learning code library based on Pytorch Lightning for solar irradiance pre
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/ideas)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -21,7 +21,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://jotyjt.github.io/"><img src="https://avatars.githubusercontent.com/u/your-github-user-id?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Your Name</b></sub></a><br /><a href="https://github.com/openclimatefix/satflow/commits?author=your-github-username" title="Code">💻</a></td>
+      <td align="center"><a href="https://jotyjt.github.io/"><img src="https://avatars.githubusercontent.com/u/JOTYtao?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Joty</b></sub></a><br /><a href="JOTYtao" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
