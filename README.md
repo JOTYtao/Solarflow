@@ -8,6 +8,6 @@
 [![hydra](https://img.shields.io/badge/Config-Hydra_1.2-89b8cd)](https://hydra.cc/) 
 </div>
 
-A deep learning framework based on Pytorch Lightning for solar irradiance prediction.
+A deep learning code library based on Pytorch Lightning for solar irradiance prediction.
 
 
