@@ -13,7 +13,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-@hydra.main(version_base="1.3", config_path="E:/research/my_code/solar_flow/configs/", config_name="SwinLSTM.yaml")
+@hydra.main(version_base="1.3", config_path="/configs/", config_name="SwinLSTM.yaml")
 def main(config: DictConfig):
     utils.extras(config)
     if config.get("print_config"):
