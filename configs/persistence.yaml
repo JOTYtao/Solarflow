@@ -1,0 +1,108 @@
+# @package _global_
+
+# specify here default training configuration
+seed: 42
+work_dir: ''
+model_name: Persistence
+# path to folder with data
+data_dir: ${work_dir}/data
+debug: False
+mode: train
+print_config: True
+
+ignore_warnings: True
+trainer:
+  _target_: pytorch_lightning.Trainer
+  default_root_dir: ${work_dir}/checkpoints/${model_name}
+  gradient_clip_val: 1.0
+  devices: 1
+  accelerator: "gpu"
+  max_epochs: 500
+  min_epochs: 1
+  max_steps: 200000
+  min_steps: 2000
+  accumulate_grad_batches: 1
+  check_val_every_n_epoch: 1
+  num_sanity_val_steps: 2
+  enable_checkpointing: True
+  enable_progress_bar: True
+  log_every_n_steps: 100
+  precision: 16
+  sync_batchnorm: False
+  benchmark: True
+  deterministic: False
+  fast_dev_run: False
+  overfit_batches: 0.0
+  enable_model_summary: True
+  strategy: "auto"
+model:
+  _target_: models.persistence.persistence.Persistence
+  forecast_steps: 8
+  save_dir: ${work_dir}/results/${model_name}
+
+datamodule:
+  _target_: data.datamodules.SIS_DataModule
+  dataset:
+    "data_path": ${data_dir}
+    "years": {
+      "train": [ 2017, 2018, 2019, 2020 ],
+      "val": [ 2021 ],
+      "test": [ 2022 ]}
+    "input_len": 8
+    "pred_len": 8
+    "stride": 1
+    "use_possible_starts": True
+  "batch_size": 16
+  "num_workers": 10
+  "pin_memory": True
+
+callbacks:
+  model_checkpoint:
+    _target_: pytorch_lightning.callbacks.ModelCheckpoint
+    monitor: "val/loss" # name of the logged metric which determines when model is improving
+    save_top_k: 1 # save k best models (determined by above metric)
+    save_last: True # additionaly always save model from last epoch
+    save_weights_only: True # Save only weights and hyperparams, makes smaller and doesn't include callbacks/optimizer/etc. Generally, this should be True, as haven't really been restarting training runs much
+    mode: "min" # can be "max" or "min"
+    verbose: False
+    dirpath: ${work_dir}/checkpoints/${model_name}
+    filename: "epoch_{epoch:03d}-val_loss_{val/loss:.4f}"
+
+  early_stopping:
+    _target_: pytorch_lightning.callbacks.EarlyStopping
+    monitor: "val/loss" # name of the logged metric which determines when model is improving
+    patience: 5 # how many epochs of not improving until training stops
+    mode: "min" # can be "max" or "min"
+    min_delta: 1e-3  # minimum change in the monitored metric needed to qualify as an improvement
+    verbose: True
+  lr_monitor:
+    _target_: pytorch_lightning.callbacks.LearningRateMonitor
+    logging_interval: "epoch"
+
+  model_logging:
+    _target_: core.callbacks.NeptuneModelLogger
+    model_name: ${model_name}
+logger:
+    # https://neptune.ai
+  neptune:
+    _target_: neptune.new.integrations.pytorch_lightning.NeptuneLogger
+    api_key: "" 
+    project: ""
+    prefix: ""
+    name: ""
+hydra:
+  run:
+    dir: ${work_dir}/logs/runs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${work_dir}/logs/multiruns/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${hydra.job.num}
+
+  # you can set here environment variables that are universal for all users
+  # for system specific variables (like data paths) it's better to use .env file!
+  job:
+    env_set:
+      EXAMPLE_VAR: "example_value"
+
+paths:
+  output_dir: ${work_dir}/outputs/${model_name}
+  log_dir: ${work_dir}/logs/${model_name}
