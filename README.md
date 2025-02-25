@@ -25,10 +25,15 @@ After completing the configuration of the relevant models, you just need to repl
 ```bash
 python run.py
 ```
-## ConvLSTM forecasting results (CSI)
-
+## ConvLSTM forecasting results 
+### Prediction target - Clear Sky Index
 <div align="center">
 <img src="fig/convlstm.jpg" width="800">
+</div>
+
+### Prediction target - SSI
+<div align="center">
+<img src="fig/SSI.jpg" width="800">
 </div>
 
 ## Contributors ✨
