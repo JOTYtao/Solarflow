@@ -9,7 +9,22 @@
 </div>
 
 A deep learning code library based on Pytorch Lightning for solar irradiance prediction.
+This deterministic solar irradiance prediction codes library was developed to contribute a bit to the field.
 
+## Models
+So far, the code library includes five deep learning models.
+-  **SimVP** - [SimVP: Simpler yet Better Video Prediction](https://arxiv.org/abs/2206.05099)
+-  **SwinLSTM** - [SwinLSTM:Improving Spatiotemporal Prediction Accuracy using Swin Transformer and LSTM](https://arxiv.org/abs/2308.09891)
+-  **3D Unet** - [3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](https://arxiv.org/abs/1606.06650)
+-  **Attention Unet**
+-  **ConvLSTM** - [Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting](https://arxiv.org/abs/1506.04214)
+
+## Training process
+The pytorch modules required for the model must be installed before starting to train the model, detailed versions can be found in requirements.txt. After the requirements for model training have been met, all the files in configs need to be configured.
+After completing the configuration of the relevant models, you just need to replace the relevant .yaml paths in the run.py file and launch:
+```bash
+python run.py
+```
 
 ## Contributors ✨
 
