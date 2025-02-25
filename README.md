@@ -25,10 +25,10 @@ After completing the configuration of the relevant models, you just need to repl
 ```bash
 python run.py
 ```
-## ConvLSTM forecasting results
+## ConvLSTM forecasting results (CSI)
 
 <div align="center">
-<img src="fig/convlstm.jpg" width="700">
+<img src="fig/convlstm.jpg" width="800">
 </div>
 
 ## Contributors ✨
