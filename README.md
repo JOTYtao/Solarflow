@@ -28,7 +28,7 @@ python run.py
 ## ConvLSTM forecasting results
 
 <div align="center">
-<img src="fig/convlstm.jpg" width="550">
+<img src="fig/convlstm.jpg" width="700">
 </div>
 
 ## Contributors ✨
