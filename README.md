@@ -10,6 +10,8 @@
 
 A deep learning code library based on Pytorch Lightning for solar irradiance prediction.
 This deterministic solar irradiance prediction codes library was developed to contribute a bit to the field.
+## Satellite derived solar irradiance data
+You guys can download regional solar irradiance data throught [CM SAF](https://wui.cmsaf.eu/safira/action/viewProduktSearch).
 
 ## Models
 So far, the code library includes five deep learning models.
@@ -21,7 +23,7 @@ So far, the code library includes five deep learning models.
 
 ## Training process
 The pytorch modules required for the model must be installed before starting to train the model, detailed versions can be found in requirements.txt. After the requirements for model training have been met, all the files in configs need to be configured.
-After completing the configuration of the relevant models, you just need to replace the relevant .yaml paths in the run.py file and launch:
+After completing the configuration of the relevant models, you just need to replace the relevant .yaml paths in the run.py file or launch:
 ```bash
 python run.py --config-name=model name
 ```
