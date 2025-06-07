@@ -1,0 +1,17 @@
+_target_: datasets.dataloader_csi.SolarDataModule
+
+data_root: ${paths.data_dir}
+input_len: 4
+pred_len: 12
+use_possible_starts: true
+batch_size: 16
+val_batch_size: 16
+num_workers: 10
+distributed: false
+use_prefetcher: false
+drop_last: false
+years:
+  train: [2017, 2018, 2019, 2020]
+  val: [2021]
+  test: [2022]
+

@@ -1,0 +1,11 @@
+wandb:
+  _target_: pytorch_lightning.loggers.wandb.WandbLogger
+  project: "solar_prediction"
+  name: ${model_name}
+  save_dir: ${paths.log_dir}
+  version: null
+  offline: false
+  log_model: true
+  prefix: ""
+  group: ${model_name}
+  tags: ["solar", "predrnn"]

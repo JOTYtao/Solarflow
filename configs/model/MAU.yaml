@@ -1,0 +1,18 @@
+_target_: methods.MAU
+metrics:
+  - 'mae'
+  - 'mse'
+num_hidden: '128,128,128,128'
+in_shape: [16, 1, 128, 128]
+patch_size: 1
+filter_size: 5
+stride: 1
+tau: 5
+input_len: 4
+pred_len: 12
+lr: 0.001
+scheduled_sampling: 1
+sampling_stop_iter: 50000
+sampling_start_value: 1.0
+sampling_changing_rate: 0.00002
+save_dir: ${paths.output_dir}

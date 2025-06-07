@@ -1,0 +1,29 @@
+# configs/config.yaml
+defaults:
+  - _self_
+  - trainer: trainer
+  - model: ConvLSTM
+  - datamodule: CSI
+  - callbacks: default
+  - logger: neptune
+model_name: "convlstm"
+experiment: "solar_prediction"
+seed: 42
+optimized_metric: "val_loss"
+mode: "train"  # 'train' or 'test'
+work_dir: '/home/joty/code/Solar_D2P'
+paths:
+  data_dir: ${work_dir}/data
+  output_dir: ${work_dir}/results/${model_name}
+  metric_dir: ${paths.output_dir}/metric
+  log_dir: ${paths.output_dir}/logs
+  ckpt_dir: ${paths.output_dir}/checkpoints
+pretrained_ckpt_path: null
+hydra:
+  run:
+    dir: ${paths.output_dir}
+  job:
+    chdir: true
+  sweep:
+    dir: multirun
+    subdir: ${hydra.job.override_dirname}

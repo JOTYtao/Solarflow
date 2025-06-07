@@ -1,0 +1,23 @@
+# configs/model/predrnn.yaml
+
+_target_: methods.MIM
+metrics:
+  - 'mae'
+  - 'mse'
+num_hidden: '128,128,128,128'
+in_shape: [16, 1, 128, 128]
+patch_size: 4
+filter_size: 5
+stride: 1
+layer_norm: true
+input_len: 4
+pred_len: 12
+lr: 0.0001
+reverse_scheduled_sampling: 0
+r_sampling_step_1: 25000
+r_sampling_step_2: 50000
+r_exp_alpha: 50000
+scheduled_sampling: 1
+sampling_stop_iter: 50000
+sampling_changing_rate: 0.00002
+save_dir: ${paths.output_dir}

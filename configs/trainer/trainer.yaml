@@ -1,0 +1,24 @@
+
+_target_: pytorch_lightning.Trainer
+default_root_dir: ${paths.output_dir}
+gradient_clip_val: 0.5
+devices: [1]
+accelerator: "gpu"
+max_epochs: 50
+min_epochs: 50
+max_steps: 200000
+min_steps: 200000
+accumulate_grad_batches: 1
+check_val_every_n_epoch: 1
+num_sanity_val_steps: 2
+enable_checkpointing: True
+enable_progress_bar: True
+log_every_n_steps: 100
+precision: 16
+sync_batchnorm: False
+benchmark: True
+deterministic: False
+fast_dev_run: False
+overfit_batches: 0.0
+enable_model_summary: True
+strategy: "auto"  # 'ddp', 'deepspeed_stage_2', 'ddp_find_unused_parameters_false'

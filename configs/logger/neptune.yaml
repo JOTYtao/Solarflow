@@ -1,0 +1,7 @@
+neptune:
+  _target_: neptune.new.integrations.pytorch_lightning.NeptuneLogger
+  api_key:  # api key is loaded from environment variable
+  project: "joty/Solar-forecasting"
+  prefix: ""
+  name: "e3dlstm"
+  tags: "Deterministic Forecasting"
