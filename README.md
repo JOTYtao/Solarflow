@@ -23,7 +23,7 @@ So far, the code library includes five deep learning models.
 The pytorch modules required for the model must be installed before starting to train the model, detailed versions can be found in requirements.txt. After the requirements for model training have been met, all the files in configs need to be configured.
 After completing the configuration of the relevant models, you just need to replace the relevant .yaml paths in the run.py file and launch:
 ```bash
-python run.py
+python run.py --config-name=model name
 ```
 ## ConvLSTM forecasting results 
 ### Prediction target - Clear Sky Index
