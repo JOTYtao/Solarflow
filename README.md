@@ -9,7 +9,7 @@
 </div>
 
 A deep learning code library based on Pytorch Lightning for solar irradiance prediction.
-This deterministic solar irradiance prediction codes library was developed to contribute a bit to the field.
+This deterministic solar irradiance prediction codes library was developed to contribute a bit to the field. I'll be maintaining the main branch on a regular basis.
 ## Satellite derived solar irradiance data
 You guys can download regional solar irradiance data throught [CM SAF](https://wui.cmsaf.eu/safira/action/viewProduktSearch).
 
