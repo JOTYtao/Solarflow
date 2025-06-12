@@ -15,10 +15,10 @@ You guys can download regional solar irradiance data throught [CM SAF](https://w
 
 ## Models
 So far, the code library includes five deep learning models.
--  **SimVP** - [SimVP: Simpler yet Better Video Prediction](https://arxiv.org/abs/2206.05099)
--  **SwinLSTM** - [SwinLSTM:Improving Spatiotemporal Prediction Accuracy using Swin Transformer and LSTM](https://arxiv.org/abs/2308.09891)
--  **3D Unet** - [3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation](https://arxiv.org/abs/1606.06650)
--  **Attention Unet**
+-  **PredRNN** - [PredRNN: Recurrent Neural Networks for Predictive Learning using Spatiotemporal LSTMs](https://papers.nips.cc/paper_files/paper/2017/file/e5f6ad6ce374177eef023bf5d0c018b6-Paper.pdf)
+-  **MIM** - [Memory In Memory: A Predictive Neural Network for Learning Higher-Order Non-Stationarity from Spatiotemporal Dynamics](https://arxiv.org/pdf/1811.07490)
+-  **MAU** - [MAU: A Motion-Aware Unit for Video Prediction and Beyond](https://proceedings.neurips.cc/paper_files/paper/2021/file/e25cfa90f04351958216f97e3efdabe9-Paper.pdf)
+-  **E3DLSTM** - [Eidetic 3D LSTM: A Model for Video Prediction and Beyond](https://openreview.net/pdf?id=B1lKS2AqtX)
 -  **ConvLSTM** - [Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting](https://arxiv.org/abs/1506.04214)
 
 ## Training process
